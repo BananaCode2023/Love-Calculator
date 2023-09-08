@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #loveButton{
+            width: 300px;
+            height: 30px;
+            color: white;
+            background-color: rgb(224, 56, 137);
+            border-radius: 0.6rem;
+            margin-inline: auto;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .wrapper{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .img{
+            background: url(heart.png);
+            width: 360px;
+            height: 350px;
+        }
+        .container{
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            align-items: center;
+        }
+        input{
+            width: 300px;
+            height: 25px;
+        }
+        #header{
+            font-weight: 600;
+            font-family: helvetica;
+            font-size: 4rem;
+            text-align: center;
+        }
+        #percent{
+            margin-top: 130px;
+            text-align: center;
+            font-size: 5rem;
+            font-weight: 600;
+            color: white;
+            font-family: helvetica;
+        }
+        #result{
+            text-align: center;
+            font-size: 3rem;
+            font-weight: 450;
+            color: rgb(224, 56, 137);
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+    <p id="header">Calculate your love for each other, here is a simple love calculator for you</p>
+    <div class="container">
+    <input type="text" placeholder="Input your name">
+    <div class="img">
+        <p id="percent">0%</p>
+    </div>
+    <input type="text" placeholder="Input your partner's name">
+    </div>
+    <button id="loveButton" onclick="percentage()">Calculate Your Love</button>
+    <p id="result"></p>
+    </div>
+
+
+    <script>
+    let lovePercent = document.getElementById("percent");
+    let n= Math.random()*100;
+
+    function percentage(){
+        document.getElementById("percent").textContent = Math.round(n)+ "%";
+
+    let result = document.getElementById("result");
+
+        if(n < 25){
+            document.getElementById("result").textContent = "You are not meant for each other"
+        }
+        else if(n > 25 && n < 50){
+            document.getElementById("result").textContent = "Work out on your relationship more to make it better."
+        }
+        else if(n > 50 && n < 75){
+            document.getElementById("result").textContent = "You are close to a great love but need to know more about each other"
+        }
+        else if(n > 75 && n < 90){
+            document.getElementById("result").textContent = "You are doing it right. Work on it a little more to achieve the love you both wanted"
+        }
+        else if(n > 90 && n < 100){
+            document.getElementById("result").textContent = "You are on the road to forever! Sana Ol!"
+        }
+    }
+
+
+    </script>
+</body>
+</html>
